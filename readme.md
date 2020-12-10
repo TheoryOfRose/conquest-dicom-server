@@ -1,4 +1,8 @@
-This is the new **conquest DICOM server** source code repository, it is the first ever release of the full source code of Conquest Dicom server with full source code, including the windows GUI.
+This project is to use Conquest-DICOM-Server in docker environment.
+It adds the dockerfile and change maklinux for deploying in ubuntu docker.
+
+========================================================================================================================================================
+Reference for Conquest-DICOM-Server
 
 [Web page] https://ingenium.home.xs4all.nl/dicom.html
 
