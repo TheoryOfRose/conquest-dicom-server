@@ -11,7 +11,7 @@ COPY ./ /conquestdicomserver
 
 WORKDIR /conquestdicomserver/
 RUN chmod 777 maklinux
-RUN sh maklinux
+RUN ./maklinux
 
 EXPOSE 5678 80
 
