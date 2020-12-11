@@ -11,3 +11,15 @@ Fri Dec 11 07:40:19 2020 ***SQLITEExec error: no such table: DICOMImages
 Fri Dec 11 07:40:19 2020 ***Failed SQLITEExec : DROP TABLE DICOMImages
 Fri Dec 11 07:40:19 2020 ***SQLITEExec error: no such table: UIDMODS
 Fri Dec 11 07:40:19 2020 ***Failed SQLITEExec : DROP TABLE UIDMODS
+Fri Dec 11 14:23:15 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:27:31 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:37:39 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:39:10 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:40:35 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:55:11 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:55:30 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:59:40 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 14:59:47 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 15:00:50 2020 *** Not enough rights to write in MAG0
+Fri Dec 11 15:00:50 2020 ***Failed to Listen () - bind error
+Fri Dec 11 15:01:33 2020 *** Not enough rights to write in MAG0

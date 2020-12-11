@@ -32,13 +32,13 @@ FLAGS="-std=c++11 -DUNIX -DNATIVE_ENDIAN=1 -DHAVE_LIBJPEG -DHAVE_LIBCHARLS -DHAV
 INCS="-I$SRC/dicomlib -ljpeg -lpthread -ldl -I$SRC/src -I$SRC/jpeg-6c -L$SRC/jpeg-6c -I$SRC/lua_5.1.5 -I$SRC/openjpeg -I$SRC/charls";
 OBS="$SRC/charls.o $SRC/openjpeg.o";
 
-#sudo mkdir /usr/local/man.man1
+mkdir -p /usr/local/man/man1
 chmod 777 src/dgate/jpeg-6c/configure
 cd src/dgate/jpeg-6c
 ./configure
 make
 echo Please ignore the errors below
-sudo make install
+make install
 echo Please ignore the errors above
 cd ../../..
 
@@ -68,29 +68,29 @@ cp $CONF/dicom.sql.sqlite dicom.sql;
 [ ! -f acrnema.map ] && cp $LINUX/acrnema.map acrnema.map;
 cp $LINUX/dgatesop.lst dgatesop.lst;
 
-sudo cp ./dgate /usr/lib/cgi-bin/dgate ;
-sudo cp ./dgate /usr/lib/cgi-bin/dgate.exe ;
-sudo cp ./dicom.sql /usr/lib/cgi-bin/dicom.sql ;
-sudo cp ./acrnema.map /usr/lib/cgi-bin/acrnema.map ;
+cp ./dgate /usr/lib/cgi-bin/dgate ;
+cp ./dgate /usr/lib/cgi-bin/dgate.exe ;
+cp ./dicom.sql /usr/lib/cgi-bin/dicom.sql ;
+cp ./acrnema.map /usr/lib/cgi-bin/acrnema.map ;
 
 [ ! -d /usr/lib/cgi-bin ] && sudo mkdir -p /usr/lib/cgi-bin ;
-sudo chmod 777 /usr/lib/cgi-bin ;
+chmod 777 /usr/lib/cgi-bin ;
 
-sudo cp -r ./webserver/cgi-bin/* /usr/lib/cgi-bin;
-sudo cp -r ./webserver/cgi-bin/.lua /usr/lib/cgi-bin;
-sudo cp -r ./webserver/cgi-bin/.lua.linux /usr/lib/cgi-bin;
+cp -r ./webserver/cgi-bin/* /usr/lib/cgi-bin;
+cp -r ./webserver/cgi-bin/.lua /usr/lib/cgi-bin;
+cp -r ./webserver/cgi-bin/.lua.linux /usr/lib/cgi-bin;
 envsubst < ./webserver/cgi-bin/dicom.ini.linux > t.t;
-sudo cp t.t /usr/lib/cgi-bin/dicom.ini;
+cp t.t /usr/lib/cgi-bin/dicom.ini;
 envsubst < ./webserver/cgi-bin/newweb/dicom.ini.linux > t.t;
-sudo cp t.t /usr/lib/cgi-bin/newweb/dicom.ini;
-sudo cp /usr/lib/cgi-bin/.lua.linux /usr/lib/cgi-bin/.lua;
+cp t.t /usr/lib/cgi-bin/newweb/dicom.ini;
+cp /usr/lib/cgi-bin/.lua.linux /usr/lib/cgi-bin/.lua;
 rm t.t
 
-sudo cp ./dgate /usr/lib/cgi-bin/newweb/dgate ;
-sudo cp ./dgate /usr/lib/cgi-bin/newweb/dgate.exe ;
+cp ./dgate /usr/lib/cgi-bin/newweb/dgate ;
+cp ./dgate /usr/lib/cgi-bin/newweb/dgate.exe ;
 	
-sudo cp -r ./webserver/htdocs/* /var/www;
-sudo cp -r ./webserver/htdocs/* /var/www/html;
+cp -r ./webserver/htdocs/* /var/www;
+cp -r ./webserver/htdocs/* /var/www/html;
 	
 [ ! -d data/dbase ] && mkdir data/dbase
 
@@ -101,17 +101,11 @@ chmod 777 install/linux.sh
 echo "Regenerate the database"
 ./dgate -v -r
 
-envsubst <conquest.service >t.t
-echo "Install as service"
+#envsubst <conquest.service >t.t
+#echo "Install as service"
 #sudo systemctl stop conquest.service
-sudo service conquest.service stop
-sudo cp t.t /etc/systemd/system/conquest.service
 #sudo systemctl daemon-reload
 #sudo systemctl start conquest.service
 #sudo systemctl enable conquest.service
 #sudo systemctl status conquest.service
-sudo service daemon-reload
-sudo service conquest.service start
-sudo service conquest.service enable
-sudo service conquest.service status
-rm t.t
+#rm t.t
