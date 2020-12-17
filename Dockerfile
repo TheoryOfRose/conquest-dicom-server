@@ -14,8 +14,14 @@ RUN sh maklinux
 
 EXPOSE 5678 8086
 
-RUN chmod 777 server.sh
-CMD ["./server.sh"]
+RUN chmod 777 serve.sh
+CMD ["./serve.sh"]
+
+#RUN cp conquest.service /etc/init.d/conquest.service
+#RUN service conquest start
+
+#RUN chmod 777 server.sh
+#CMD ["./server.sh"]
 
 
 
